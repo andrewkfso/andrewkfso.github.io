@@ -1,0 +1,23 @@
+.project-card {
+    width: 18rem;
+}
+
+.card-image {
+    height: 10rem;
+    object-fit: cover;
+}
+
+.card-body {
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-button {
+    align-self: flex-end;
+}

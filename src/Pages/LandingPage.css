@@ -1,0 +1,27 @@
+.custom-font {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif; /* Use 'Montserrat' for another font */
+    font-size: 20px;
+    line-height: 1.75;
+    color: #fff;
+    letter-spacing: 1.75px;
+}
+
+.custom-font h1 {
+  letter-spacing: 4px; /* Adjust the value as needed */
+  font-size: 50pt;
+}
+
+.custom-font h2 {
+  letter-spacing: 4px; /* Adjust the value as needed */
+  font-size: 25pt;
+}
+
+body {
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  background-image: url('../assets/PolygonLuminary.svg');
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-attachment: fixed; /* Fixed background to prevent scrolling */
+  /* Add other styles for your page content */
+}

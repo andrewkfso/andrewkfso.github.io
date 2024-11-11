@@ -1,25 +1,66 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import './index.css';
+import LandingPage from './Pages/LandingPage';
+import Projects from './components/Projects/ProjectSection';
+import ImageCarousel from './components/Sections/ImageCarousel';
+import Footer from './components/Sections/Footer';
+import ReactFullpage from '@fullpage/react-fullpage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const SEL = 'custom-section';
+const SECTION_SEL = `.${SEL}`;
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fullpages: [
+        {
+          key: 'landingPage',
+          component: <LandingPage />,
+        },
+        {
+          key: 'projects',
+          component: <Projects />,
+        },
+        {
+          key: 'imageCarousel',
+          component: <ImageCarousel />,
+        },
+        {
+          key: 'footer',
+          component: <Footer />,
+        },
+      ],
+    };
+  }
+
+  render() {
+    const { fullpages } = this.state;
+
+    if (!fullpages.length) {
+      return null;
+    }
+
+    return (
+      <div className="App">
+        <ReactFullpage
+          licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'} // Add the open-source license key here
+          navigation
+          sectionSelector={SECTION_SEL}
+          render={() => (
+            <ReactFullpage.Wrapper>
+              {fullpages.map(({ key, component }) => (
+                <div key={key} className={SEL}>
+                  {component}
+                </div>
+              ))}
+            </ReactFullpage.Wrapper>
+          )}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

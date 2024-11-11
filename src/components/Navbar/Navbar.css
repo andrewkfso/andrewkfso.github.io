@@ -1,0 +1,47 @@
+/* App.css */
+.App {
+    display: flex;
+  }
+  
+  .navbar-vertical {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    transition: width 0.3s;
+  }
+  
+  .navbar-vertical.collapsed {
+    width: 75px;
+  }
+  
+  .navbar-header {
+    padding: 15px;
+  }
+  
+  .navbar-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navbar-content {
+    padding: 15px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+  
+  .nav-link:hover {
+    background-color: #495057;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
